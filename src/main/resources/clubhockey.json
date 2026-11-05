@@ -1,0 +1,68 @@
+{
+  "socios": [
+    {
+      "id_socio": 1,
+      "nombre": "Carlos",
+      "apellidos": "García Martínez",
+      "anio_nacimiento": 1992,
+      "fecha_alta": "2018-09-15",
+      "fecha_baja": null,
+      "posicion_juego": "Delantero Centro",
+      "categoria_equipo": "Senior A",
+      "cargos": [
+        {
+          "id_cargo": 101,
+          "nombre_cargo": "Capitán de Equipo",
+          "departamento": "Deportivo",
+          "fecha_inicio": "2020-10-01",
+          "fecha_fin": null
+        },
+        {
+          "id_cargo": 102,
+          "nombre_cargo": "Vocal",
+          "departamento": "Junta Directiva",
+          "fecha_inicio": "2022-06-01",
+          "fecha_fin": null
+        }
+      ]
+    },
+    {
+      "id_socio": 2,
+      "nombre": "Laura",
+      "apellidos": "Sánchez Gómez",
+      "anio_nacimiento": 1998,
+      "fecha_alta": "2020-01-10",
+      "fecha_baja": null,
+      "posicion_juego": "Portera",
+      "categoria_equipo": "Femenino A",
+      "cargos": [
+        {
+          "id_cargo": 103,
+          "nombre_cargo": "Entrenadora Asistente",
+          "departamento": "Escuela Sub-12",
+          "fecha_inicio": "2023-09-01",
+          "fecha_fin": null
+        }
+      ]
+    },
+    {
+      "id_socio": 3,
+      "nombre": "Mikel",
+      "apellidos": "Etxeberria Urkizu",
+      "anio_nacimiento": 1985,
+      "fecha_alta": "2012-04-01",
+      "fecha_baja": "2024-05-31",
+      "posicion_juego": "Defensa",
+      "categoria_equipo": "Veteranos",
+      "cargos": [
+        {
+          "id_cargo": 104,
+          "nombre_cargo": "Tesorero",
+          "departamento": "Junta Directiva",
+          "fecha_inicio": "2016-01-01",
+          "fecha_fin": "2024-05-31"
+        }
+      ]
+    }
+  ]
+}
