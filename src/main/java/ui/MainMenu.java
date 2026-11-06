@@ -2,8 +2,10 @@ package ui;
 
 import database.StructureDB;
 import dtosJSON.HockeyClub;
+import dtosJSON.Member;
 import dtosUI.MemberUI;
 import myLib.UserMethods;
+import services.MemberJsonServices;
 import services.MemberServices;
 import tools.jackson.databind.ObjectMapper;
 
@@ -20,7 +22,7 @@ public class MainMenu {
         UserMethods userMethods = new UserMethods();
         do{
             userMethods.myPrinter("Choose an option: ");
-            userMethods.myPrinter("1. Read JSON file using Jackson");
+            userMethods.myPrinter("1. Read and load JSON file using Jackson");
             userMethods.myPrinter("2. Create data base");
             userMethods.myPrinter("3. Insert new member");
             userMethods.myPrinter("0. Exit.");
@@ -36,9 +38,14 @@ public class MainMenu {
         switch(option){
             case "0" -> exitMenu = true;
             case "1" -> {
+                // leemos el jeson y lo cargamos en nuestro DTO creado al efecto9
                 Path p = userMethods.fileToRead("Introduce the path to the file to be read with Jackson: ");
                 ObjectMapper objectMapper = new ObjectMapper();
                 hockeyClub = objectMapper.readValue(p.toFile(), HockeyClub.class);
+                // creamos un servicio para insertar los miembros del objeto hockeyclub
+                MemberJsonServices memberJsonServices = new MemberJsonServices();
+                StringBuilder  message = memberJsonServices.inserJsonMembers(hockeyClub);
+
                 userMethods.myPrinter("Hockey club properly loaded.");
             }
             case "2" -> {

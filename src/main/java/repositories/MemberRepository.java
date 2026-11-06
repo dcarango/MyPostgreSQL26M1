@@ -5,6 +5,7 @@ import database.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -42,5 +43,28 @@ public class MemberRepository {
         }
 
         return insertOk;
+    }
+
+    public Integer idByLastName (String lastName) {
+        Integer idMember = 0;
+        String sql = "SELECT member_id FROM member WHERE last_name = ?";
+
+        DBConnection con = new DBConnection();
+
+        try (
+                Connection miCon = con.connect();
+                PreparedStatement pstm = miCon.prepareStatement(sql)
+        ) {
+            pstm.setString(1,lastName);
+            ResultSet rs = pstm.executeQuery();
+
+            if (rs.next()) {
+                idMember = rs.getInt("member_id");
+            }
+        } catch (SQLException e) {
+            idMember = null;
+        }
+
+        return idMember;
     }
 }

@@ -54,7 +54,6 @@ public class MemberServices {
             }
         }
 
-        // si no hay ninguna redFlag es que puedo hacer el insert
         //si no hay ninguna redFlag es que puedo hacer el insert
         if (!redFlag){
             MemberDAO newMemberDAO = new MemberDAO();
